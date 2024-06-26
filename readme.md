@@ -49,7 +49,16 @@ git clone https://github.com/rabatm/inception_42.git
 cd inception_42
 ```
 
-4. grace au makefile vous lancer le projet, je vous laisse lancer make help pour voir les commandes disponible
+4. grace au makefile vous allez pouvoir :
+
+```bash
+- **`make start`** : Lance les conteneurs Docker. Cela démarre l'application WordPress.
+- **`make stop`** : Arrête les conteneurs Docker en cours d'exécution.
+- **`make clean`** : Arrête les conteneurs et supprime toutes les images et volumes créés par Docker Compose.
+- **`make fclean`** : Exécute `make clean` et supprime également toutes les données de WordPress et de la base de données.
+- **`make remove_data`** : Supprime manuellement les données de WordPress et de la base de données.
+- **`make re`** : Reconstruit entièrement l'environnement Docker, équivalent à exécuter `make fclean` suivi de `make all`.
+```
 
 ## Remerciements
 
