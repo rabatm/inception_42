@@ -87,8 +87,7 @@ Un grand merci à eux pour le partage de leur savoir et leur aide..
 
 Pourquoi les conteneurs Docker n'ont-ils jamais froid ?
 
-Parce qu'ils utilisent "Docker Swarm" pour rester toujours au chaud !😄
-
 ```
+Parce qu'ils utilisent "Docker Swarm" pour rester toujours au chaud !😄
 
 ```
