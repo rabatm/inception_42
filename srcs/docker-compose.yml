@@ -57,9 +57,9 @@ volumes:
     driver_opts:
       type: "none"
       o: bind
-      device: /Users/martinrabat/data/wordpress_files
+      device: ${HOME}/data/wordpress_files
   wordpress_db:
     driver_opts:
       type: "none"
       o: bind
-      device: /Users/martinrabat/data/wordpress_db
+      device: ${HOME}/data/wordpress_db
