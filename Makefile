@@ -17,8 +17,7 @@ all: hosts_add start
 
 start:
 	@echo "🚀 vers l'infini et au-delà ..."
-	@echo "🏡 on ajoute l'univer dans le fichier hosts"
-
+	mkdir -p $(WORDPRESS_DATA_PATH) $(DB_DATA_PATH)
 	$(DC) up -d
 	@echo "⏳ Attente que le site soit opérationnel..."
 	@echo "✅ Application déployée avec succès! Visitez https://${DOMAIN_NAME} pour voir le résultat!"
