@@ -14,4 +14,4 @@ RUN mkdir -p /etc/nginx/ssl
 COPY tools/init.sh /usr/local/bin/init.sh
 RUN chmod +x /usr/local/bin/init.sh
 
-ENTRYPOINT ["init.sh"]
+CMD ["init.sh"]
