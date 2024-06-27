@@ -13,10 +13,12 @@ DB_DATA_PATH=$(HOME)/data/wordpress_db
 # Commande de base Docker Compose
 DC=docker compose -f srcs/docker-compose.yml
 
-all: start
+all: hosts_add start
 
 start:
 	@echo "🚀 vers l'infini et au-delà ..."
+	@echo "🏡 on ajoute l'univer dans le fichier hosts"
+
 	$(DC) up -d
 	@echo "⏳ Attente que le site soit opérationnel..."
 	@echo "✅ Application déployée avec succès! Visitez https://${DOMAIN_NAME} pour voir le résultat!"
@@ -33,8 +35,17 @@ clean: stop
 	# docker system prune -a
 	@echo "🛁 Tout est propre! Prêt pour une nouvelle aventure."
 
-fclean: clean remove_data
+fclean: clean hosts_remove remove_data
 	@echo "🔥 Tout a été incinéré! Plus aucune trace de notre précédente mission."
+
+hosts_add:
+	@echo "📝 Ajout de ${DOMAIN_NAME} à /etc/hosts..."
+	@sudo hostsed add 127.0.0.1 $(DOMAIN_NAME) && echo "✅ ${DOMAIN_NAME} ajouté avec succès!"
+
+hosts_remove:
+	@echo "🗑️ Retrait de ${DOMAIN_NAME} de /etc/hosts..."
+	@sudo hostsed rm 127.0.0.1 $(DOMAIN_NAME) && echo "✅ ${DOMAIN_NAME} retiré avec succès!"
+
 
 remove_data:
 	@echo "🧼 Nettoyage des données WordPress et de la base de données..."
