@@ -39,11 +39,11 @@ fclean: clean hosts_remove remove_data
 
 hosts_add:
 	@echo "📝 Ajout de ${DOMAIN_NAME} à /etc/hosts..."
-	@sudo hostsed add 127.0.0.1 $(DOMAIN_NAME) && echo "✅ ${DOMAIN_NAME} ajouté avec succès!"
+	sudo hostsed add 127.0.0.1 $(DOMAIN_NAME) && echo "✅ ${DOMAIN_NAME} ajouté avec succès!"
 
 hosts_remove:
 	@echo "🗑️ Retrait de ${DOMAIN_NAME} de /etc/hosts..."
-	@sudo hostsed rm 127.0.0.1 $(DOMAIN_NAME) && echo "✅ ${DOMAIN_NAME} retiré avec succès!"
+	sudo hostsed rm 127.0.0.1 $(DOMAIN_NAME) && echo "✅ ${DOMAIN_NAME} retiré avec succès!"
 
 
 remove_data:
