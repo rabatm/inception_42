@@ -49,11 +49,11 @@ hosts_remove:
 remove_data:
 	@echo "🧼 Nettoyage des données WordPress et de la base de données..."
 	@if [ -d "$(WORDPRESS_DATA_PATH)" ]; then \
-	rm -rf $(WORDPRESS_DATA_PATH)/* && \
+	@sudo rm -rf $(WORDPRESS_DATA_PATH)/* && \
 	echo "✅ Données WordPress vaporisées!"; \
 	fi;
 	@if [ -d "$(DB_DATA_PATH)" ]; then \
-	rm -rf $(DB_DATA_PATH)/* && \
+	@sudo rm -rf $(DB_DATA_PATH)/* && \
 	echo "✅ Données de la base de données désintégrées!"; \
 	fi;
 
